@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malla Curricular Interactiva - Ingeniería Comercial</title>
+    <!-- Enlace al archivo de estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Plan de estudios</h1>
+            <h2>Ingeniería Comercial</h2>
+            <div class="menciones">
+                <p>- Mención Administración</p>
+            </div>
+        </header>
+
+        <div class="malla-scroll-wrapper">
+            <div class="malla-content">
+                <!-- Años y semestres/trimestres -->
+                <div class="timeline">
+                    <div class="year year-semestral">
+                        <span class="year-label">Año 01</span>
+                        <div class="semesters">
+                            <span class="semester">SEMESTRE 1</span>
+                            <span class="semester">SEMESTRE 2</span>
+                        </div>
+                    </div>
+                    <div class="year year-semestral">
+                        <span class="year-label">Año 02</span>
+                        <div class="semesters">
+                            <span class="semester">SEMESTRE 3</span>
+                            <span class="semester">SEMESTRE 4</span>
+                        </div>
+                    </div>
+                    <div class="year year-semestral">
+                        <span class="year-label">Año 03</span>
+                        <div class="semesters">
+                            <span class="semester">SEMESTRE 5</span>
+                            <span class="semester">SEMESTRE 6</span>
+                        </div>
+                    </div>
+                    <div class="year year-semestral">
+                        <span class="year-label">Año 04</span>
+                        <div class="semesters">
+                            <span class="semester">SEMESTRE 7</span>
+                            <span class="semester">SEMESTRE 8</span>
+                        </div>
+                    </div>
+                    <div class="year year-trimestral">
+                        <span class="year-label">Año 05</span>
+                        <div class="semesters">
+                            <span class="semester">TRIMESTRE 1</span>
+                            <span class="semester">TRIMESTRE 2</span>
+                            <span class="semester">TRIMESTRE 3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Malla de ramos -->
+                <div class="malla-grid">
+                    <!-- Semestre 1 -->
+                    <div class="column" data-semester-index="0">
+                        <div class="ramo" data-ramo="matematica">Matemática</div>
+                        <div class="ramo" data-ramo="administracion">Administración</div>
+                        <div class="ramo" data-ramo="economia">Economía</div>
+                        <div class="ramo" data-ramo="contabilidad">Contabilidad</div>
+                        <div class="ramo" data-ramo="comunicacion-oral-escrita-1">Comunicación Oral y Escrita I</div>
+                        <div class="ramo" data-ramo="idioma-extranjero-1">Idioma Extranjero I</div>
+                        <div class="ramo" data-ramo="taller-ofimatica">Taller de Ofimática</div>
+                    </div>
+
+                    <!-- Semestre 2 -->
+                    <div class="column" data-semester-index="1">
+                        <div class="ramo" data-ramo="comunicacion-oral-escrita-2">Comunicación Oral y Escrita II</div>
+                        <div class="ramo" data-ramo="idioma-extranjero-2">Idioma Extranjero II</div>
+                    </div>
+
+                    <!-- Semestre 3 -->
+                    <div class="column" data-semester-index="2">
+                        <div class="ramo" data-ramo="calculo">Cálculo</div>
+                        <div class="ramo" data-ramo="gestion-personas">Gestión de Personas</div>
+                        <div class="ramo" data-ramo="sistemas-tecnologias-informacion">Sistemas y Tecnologías de la Información</div>
+                        <div class="ramo" data-ramo="macroeconomia-1">Macroeconomía I</div>
+                        <div class="ramo" data-ramo="costos">Costos</div>
+                        <div class="ramo" data-ramo="autogestion-aprendizaje">Autogestión del Aprendizaje</div>
+                        <div class="ramo" data-ramo="idioma-extranjero-3">Idioma Extranjero III</div>
+                    </div>
+
+                    <!-- Semestre 4 -->
+                    <div class="column" data-semester-index="3">
+                        <div class="ramo" data-ramo="algebra-lineal">Álgebra Lineal</div>
+                        <div class="ramo" data-ramo="marketing">Marketing</div>
+                        <div class="ramo" data-ramo="administracion-produccion-1">Administración de la Producción I</div>
+                        <div class="ramo" data-ramo="microeconomia-1">Microeconomía I</div>
+                        <div class="ramo" data-ramo="finanzas-1">Finanzas I</div>
+                        <div class="ramo" data-ramo="trabajo-equipo-habilidades">Trabajo en equipo y Desarrollo de Habilidades Sociales</div>
+                        <div class="ramo" data-ramo="idioma-extranjero-4">Idioma Extranjero IV</div>
+                        <div class="ramo" data-ramo="practica-1">Práctica I</div>
+                    </div>
+
+                    <!-- Semestre 5 -->
+                    <div class="column" data-semester-index="4">
+                        <div class="ramo" data-ramo="estadistica-1">Estadística I</div>
+                        <div class="ramo" data-ramo="conducta-organizacional">Conducta Organizacional</div>
+                        <div class="ramo" data-ramo="macroeconomia-2">Macroeconomía II</div>
+                        <div class="ramo" data-ramo="modulo-integrador-1">Módulo Integrador I</div>
+                        <div class="ramo" data-ramo="comprension-contextos-sociales">Comprensión de Contextos Sociales</div>
+                        <div class="ramo" data-ramo="idioma-extranjero-5">Idioma Extranjero V</div>
+                    </div>
+
+                    <!-- Semestre 6 -->
+                    <div class="column" data-semester-index="5">
+                        <div class="ramo" data-ramo="estadistica-2">Estadística II</div>
+                        <div class="ramo" data-ramo="negociacion-manejo-conflictos">Negociación y Manejo de Conflictos</div>
+                        <div class="ramo" data-ramo="administracion-produccion-2">Administración de la Producción II</div>
+                        <div class="ramo" data-ramo="derecho-laboral-comercial">Derecho Laboral y Comercial</div>
+                        <div class="ramo" data-ramo="microeconomia-2">Microeconomía II</div>
+                        <div class="ramo" data-ramo="comprension-contextos-culturales">Comprensión de Contextos Culturales</div>
+                        <div class="ramo" data-ramo="idioma-extranjero-6">Idioma Extranjero VI</div>
+                        <div class="ramo" data-ramo="deportivo-1">Deportivo I</div>
+                    </div>
+
+                    <!-- Semestre 7 -->
+                    <div class="column" data-semester-index="6">
+                        <div class="ramo" data-ramo="econometria">Econometría</div>
+                        <div class="ramo" data-ramo="direccion-estrategica">Dirección Estratégica</div>
+                        <div class="ramo" data-ramo="organizacion-industrial">Organización Industrial</div>
+                        <div class="ramo" data-ramo="evaluacion-proyectos">Evaluación Privada y Social de Proyectos</div>
+                        <div class="ramo" data-ramo="finanzas-2">Finanzas II</div>
+                        <div class="ramo" data-ramo="etica-responsabilidad-social">Ética y Responsabilidad Social</div>
+                        <div class="ramo" data-ramo="deportivo-2">Deportivo II</div>
+                    </div>
+
+                    <!-- Semestre 8 -->
+                    <div class="column" data-semester-index="7">
+                        <div class="ramo" data-ramo="inteligencia-marketing">Inteligencia de Marketing</div>
+                        <div class="ramo" data-ramo="derecho-tributario">Derecho Tributario</div>
+                        <div class="ramo" data-ramo="historia-pensamiento-economico">Historia del Pensamiento Económico</div>
+                        <div class="ramo" data-ramo="modulo-integrador-2">Módulo Integrador II</div>
+                        <div class="ramo" data-ramo="responsabilidad-social">Responsabilidad Social</div>
+                    </div>
+
+                    <!-- Trimestre 1 -->
+                    <div class="column" data-semester-index="8">
+                        <div class="ramo mencion-admin" data-ramo="marketing-estrategico">Marketing Estratégico</div>
+                        <div class="ramo mencion-admin" data-ramo="metodos-cuantitativos-gestion">Métodos Cuantitativos para la Gestión</div>
+                        <div class="ramo mencion-admin" data-ramo="electivo-1">Electivo I</div>
+                    </div>
+
+                    <!-- Trimestre 2 -->
+                    <div class="column" data-semester-index="9">
+                        <div class="ramo mencion-admin" data-ramo="implementacion-estrategica">Implementación Estratégica</div>
+                        <div class="ramo mencion-admin" data-ramo="topicos-avanzados-finanzas">Tópicos Avanzados en Finanzas</div>
+                        <div class="ramo mencion-admin" data-ramo="electivo-2">Electivo II</div>
+                        <div class="ramo mencion-admin" data-ramo="modulo-integrador-3">Módulo Integrador III</div>
+                    </div>
+
+                    <!-- Trimestre 3 -->
+                    <div class="column" data-semester-index="10">
+                        <div class="ramo mencion-admin" data-ramo="gestion-directiva-personas">Gestión Directiva de Personas</div>
+                        <div class="ramo mencion-admin" data-ramo="responsabilidad-social-empresarial">Responsabilidad Social Empresarial</div>
+                        <div class="ramo mencion-admin" data-ramo="electivo-3">Electivo III</div>
+                        <div class="ramo mencion-admin" data-ramo="practica-2">Práctica II</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="notas">
+                <p><strong>MENCIÓN ADMINISTRACIÓN</strong></p>
+                <p>LOS MÓDULOS CONTEMPLAN LOS REQUISITOS ESTABLECIDOS EN LA RESOLUCIÓN RESPECTIVA.</p>
+                <p><strong>MALLA SUJETA A MODIFICACIONES.</strong></p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Enlace al archivo de JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
