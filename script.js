@@ -52,52 +52,61 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // --- LÓGICA CORREGIDA ---
     function checkCompletionStatus(ramoElement) {
         const semesterColumn = ramoElement.closest('.column');
+        // Salir si la columna ya fue celebrada en esta sesión
         if (!semesterColumn || semesterColumn.dataset.celebrated === 'true') {
             return;
         }
 
-        const allRamosInSemester = semesterColumn.querySelectorAll('.ramo');
-        const completedRamosInSemester = semesterColumn.querySelectorAll('.ramo.completado');
-
-        if (allRamosInSemester.length === 0 || allRamosInSemester.length !== completedRamosInSemester.length) {
+        // Salir si no se han completado todos los ramos del semestre
+        if (!areAllRamosComplete(semesterColumn)) {
             return;
         }
 
+        // Marcar como celebrado para no repetir la animación
         semesterColumn.dataset.celebrated = 'true';
         const semesterIndex = parseInt(semesterColumn.dataset.semesterIndex, 10);
+        let yearComplete = false;
 
-        // Años 1 a 4 (índices 0 a 7)
+        // --- Lógica para Años 1-4 (Semestres) ---
         if (semesterIndex < 8) {
-            if (semesterIndex % 2 !== 0) { // Fin de año (semestre par)
+            const isEndOfYear = semesterIndex % 2 !== 0;
+            if (isEndOfYear) {
                 const partnerColumn = document.querySelector(`.column[data-semester-index="${semesterIndex - 1}"]`);
                 if (areAllRamosComplete(partnerColumn)) {
-                    showMilestoneNotification('¡Año Completado!', yearMessages[Math.floor(Math.random() * yearMessages.length)], 'year');
+                    yearComplete = true;
                 }
-            } else { // Fin de semestre impar
-                showMilestoneNotification('¡Semestre Superado!', semesterMessages[Math.floor(Math.random() * semesterMessages.length)], 'semester');
             }
         } 
-        // Año 5 (índices 8, 9, 10)
+        // --- Lógica para Año 5 (Trimestres) ---
         else {
-            if (semesterIndex === 10) { // Fin del último trimestre
+            const isEndOfYear = semesterIndex === 10;
+            if (isEndOfYear) {
                 const partnerColumn1 = document.querySelector(`.column[data-semester-index="8"]`);
                 const partnerColumn2 = document.querySelector(`.column[data-semester-index="9"]`);
                 if (areAllRamosComplete(partnerColumn1) && areAllRamosComplete(partnerColumn2)) {
-                    showMilestoneNotification('¡Año Completado!', yearMessages[Math.floor(Math.random() * yearMessages.length)], 'year');
+                    yearComplete = true;
                 }
-            } else { // Fin de trimestre 1 o 2
-                 showMilestoneNotification('¡Trimestre Superado!', semesterMessages[Math.floor(Math.random() * semesterMessages.length)], 'semester');
             }
+        }
+
+        // --- Decidir qué mensaje mostrar ---
+        if (yearComplete) {
+            showMilestoneNotification('¡Año Completado!', yearMessages[Math.floor(Math.random() * yearMessages.length)], 'year');
+        } else {
+            const messageTitle = semesterIndex < 8 ? '¡Semestre Superado!' : '¡Trimestre Superado!';
+            showMilestoneNotification(messageTitle, semesterMessages[Math.floor(Math.random() * semesterMessages.length)], 'semester');
         }
     }
 
     function areAllRamosComplete(column) {
         if (!column) return false;
         const total = column.querySelectorAll('.ramo').length;
+        if (total === 0) return false; // Una columna sin ramos no está completa
         const completed = column.querySelectorAll('.ramo.completado').length;
-        return total > 0 && total === completed;
+        return total === completed;
     }
 
     function showMilestoneNotification(title, message, type) {
